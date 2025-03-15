@@ -1,0 +1,68 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.h1-title {
+  font-size: toRem(60);
+  font-weight: 700;
+  line-height: 140%;
+  @media (max-width: $mobile) {
+    font-size: toRem(35);
+  }
+}
+.body-text {
+  font-size: toRem(20);
+  font-weight: 300;
+  line-height: 140%;
+  @media (max-width: $mobile) {
+    font-size: toRem(14);
+  }
+}
+.text-yellow {
+  color: var(--yellow);
+}
+.main-button {
+  padding: toRem(20) toRem(40);
+  border-radius: 100px;
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
+  text-transform: uppercase;
+  color: var(--black);
+  font-size: toRem(20);
+  font-weight: 500;
+  line-height: 140%;
+  transition: all 0.3s;
+  text-align: center;
+  @media (any-hover: hover) {
+    &:hover {
+      border: 1px solid var(--gray-border);
+      background: var(--white);
+    }
+  }
+  @media (max-width: $mobile) {
+    padding: toRem(12) toRem(24);
+    font-size: toRem(16);
+  }
+}
+.h4-button {
+  padding: toRem(12) toRem(24);
+  border-radius: 100px;
+  border: 1px solid var(--blue);
+  background: var(--blue-bg);
+  color: var(--blue);
+  font-size: toRem(20);
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+  display: inline-block;
+  @media (max-width: $mobile) {
+    padding: toRem(8) toRem(16);
+    font-size: toRem(16);
+  }
+}
+.h2-title {
+  font-size: toRem(40);
+  line-height: 140%;
+  font-weight: 700;
+  text-transform: capitalize;
+  @media (max-width: $mobile) {
+    font-size: toRem(28);
+  }
+}

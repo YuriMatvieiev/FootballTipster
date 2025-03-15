@@ -1,0 +1,47 @@
+.header {
+  padding: toRem(24) 0;
+  // .header__container
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  // .header__logo
+  &__logo {
+    color: var(--white);
+    font-size: toRem(24);
+    font-weight: 700;
+    letter-spacing: 6.24px;
+    text-transform: uppercase;
+    @media (max-width: $mobile) {
+      font-size: toRem(16);
+      letter-spacing: 4.16px;
+    }
+  }
+  // .header__menu
+  &__menu {
+  }
+}
+.menu {
+  // .menu__body
+  &__body {
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: toRem(24);
+    font-weight: 300;
+    color: var(--white);
+    @media (max-width: $mobile) {
+      font-size: toRem(14);
+    }
+  }
+  // .menu__item
+  &__item {
+  }
+  // .menu__link
+  &__link {
+  }
+}
