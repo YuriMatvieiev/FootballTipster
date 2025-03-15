@@ -1,23 +1,5 @@
 // Заголовки, загальні БЕМ блоки та інше...
-.h1-title {
-  font-size: toRem(60);
-  font-weight: 700;
-  line-height: 140%;
-  @media (max-width: $mobile) {
-    font-size: toRem(35);
-  }
-}
-.body-text {
-  font-size: toRem(20);
-  font-weight: 300;
-  line-height: 140%;
-  @media (max-width: $mobile) {
-    font-size: toRem(14);
-  }
-}
-.text-yellow {
-  color: var(--yellow);
-}
+
 .main-button {
   padding: toRem(20) toRem(40);
   border-radius: 100px;
@@ -41,6 +23,44 @@
     font-size: toRem(16);
   }
 }
+
+.h1-title {
+  font-size: toRem(60);
+  font-weight: 700;
+  line-height: 140%;
+  @media (max-width: $mobile) {
+    font-size: toRem(35);
+  }
+}
+.h2-title {
+  font-size: toRem(40);
+  line-height: 140%;
+  font-weight: 700;
+  text-transform: capitalize;
+  @media (max-width: $mobile) {
+    font-size: toRem(28);
+  }
+}
+.h3-title {
+  font-size: toRem(32);
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: capitalize;
+  @media (max-width: $mobile) {
+    font-size: toRem(20);
+  }
+}
+
+.h4-title {
+  font-size: toRem(20);
+  font-weight: 500;
+  line-height: 140%;
+  text-transform: uppercase;
+  @media (max-width: $mobile) {
+    font-size: toRem(16);
+  }
+}
+
 .h4-button {
   padding: toRem(12) toRem(24);
   border-radius: 100px;
@@ -57,12 +77,25 @@
     font-size: toRem(16);
   }
 }
-.h2-title {
-  font-size: toRem(40);
+
+.h5-title {
+  font-size: toRem(20);
+  font-weight: 600;
   line-height: 140%;
-  font-weight: 700;
   text-transform: capitalize;
   @media (max-width: $mobile) {
-    font-size: toRem(28);
+    font-size: toRem(16);
   }
+}
+
+.body-text {
+  font-size: toRem(20);
+  font-weight: 300;
+  line-height: 140%;
+  @media (max-width: $mobile) {
+    font-size: toRem(14);
+  }
+}
+.text-yellow {
+  color: var(--yellow);
 }
