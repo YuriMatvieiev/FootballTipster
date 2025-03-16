@@ -12,8 +12,12 @@
   // .hero__background
   &__background {
     position: relative;
+    .header {
+      background: transparent;
+      color: var(--white);
+    }
   }
-  // .hero__background
+  // .hero__background-img
   &__background-img {
     position: absolute;
     top: 0;
@@ -89,6 +93,14 @@
   }
   // .tipsters__container
   &__container {
+  }
+  &__title {
+    max-width: toRem(542);
+    text-align: center;
+    margin: 0 auto toRem(60);
+    @media (max-width: $mobile) {
+      margin: 0 0 toRem(24);
+    }
   }
   // .tipsters__wrap
   &__wrap {
@@ -209,6 +221,52 @@
   &__button {
     margin-top: toRem(24);
     width: 100%;
+  }
+  // .tipsters__pagination
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: toRem(72);
+    @media (max-width: $tablet) {
+      margin-top: toRem(40);
+    }
+    @media (max-width: $mobile) {
+      margin-top: toRem(24);
+      gap: 2px;
+    }
+    li {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 140%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: $mobile) {
+        font-size: toRem(14);
+      }
+    }
+  }
+  // .tipsters__pagination-button
+  &__pagination-button {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    border-radius: 50%;
+    @media (any-hover: hover) {
+      &:hover {
+        border: 1px solid var(--blue);
+      }
+    }
+  }
+  // .tipsters__pagination-active
+  &__pagination-active {
+    border-radius: 50%;
+    border: 1px solid var(--blue);
+    background: var(--blue-bg);
   }
 }
 
@@ -639,23 +697,27 @@
       0px 12px 16px -4px rgba(16, 24, 40, 0.08),
       0px 4px 6px -2px rgba(16, 24, 40, 0.03);
     margin-top: toRem(-150);
+    margin-bottom: toRem(40);
 
     @media (max-width: $mobile) {
       width: toRem(100);
       height: toRem(100);
       margin-top: toRem(-70);
+      margin-bottom: toRem(24);
     }
   }
   // .tipster-hero__subtitle
   &__subtitle {
-    margin-top: toRem(40);
-    @media (max-width: $mobile) {
-      margin-top: toRem(24);
-    }
   }
   // .tipster-hero__title
   &__title {
     margin-top: toRem(4);
+    text-align: center;
+  }
+  &__text {
+    max-width: toRem(806);
+    text-align: center;
+    margin-top: toRem(20);
   }
   // .tipster-hero__button
   &__button {
@@ -769,6 +831,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    @media (max-width: $tablet) {
+      margin-top: toRem(40);
+    }
     @media (max-width: $mobile) {
       grid-template-columns: repeat(1, 1fr);
       margin-top: toRem(24);
@@ -806,5 +871,411 @@
   // .tipster-about__card-text
   &__card-text {
     margin-top: toRem(8);
+  }
+  // .tipster-about__h2-title
+  &__h2-title {
+  }
+  // .tipster-about__h4-title
+  &__h4-title {
+    margin-top: toRem(8);
+  }
+}
+
+//========================================================================================================================================================
+
+.resent-winners {
+  padding: toRem(72) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(40) 0;
+  }
+  // .resent-winners__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+    @media (max-width: $tablet) {
+      gap: 40px;
+      align-items: flex-start;
+    }
+    @media (max-width: $mobile) {
+      gap: 24px;
+    }
+  }
+  // .resent-winners__title
+  &__title {
+    text-align: center;
+    @media (max-width: $tablet) {
+      text-align: left;
+    }
+  }
+  // .resent-winners__table
+  &__table {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    font-size: toRem(24);
+    font-weight: 300;
+    line-height: 140%;
+    @media (max-width: $tablet) {
+      font-size: toRem(16);
+    }
+  }
+  // .resent-winners__row
+  &__row {
+    display: grid;
+
+    grid-template-columns:
+      minmax(130px, 200px) minmax(270px, 350px) minmax(220px, 290px)
+      repeat(2, minmax(70px, 100px));
+    justify-content: space-between;
+    gap: 40px;
+    @media (max-width: $tablet) {
+      grid-template-columns: minmax(190px, 300px) repeat(2, minmax(40px, 120px));
+      // grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 8px;
+      column-gap: 24px;
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+  // .resent-winners__cell
+  &__cell {
+    @media (max-width: $tablet) {
+      &-date {
+        grid-area: 1 / 2 / 2 / 4;
+        color: var(--gray-text);
+        font-size: toRem(12);
+        font-weight: 500;
+        line-height: 140%;
+        text-align: right;
+      }
+      &-match {
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: 140%;
+      }
+      &-prediction {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      &-odds {
+        grid-area: 2 / 2 / 3 / 3;
+        text-align: right;
+      }
+      &-result {
+        grid-area: 2 / 3 / 3 / 4;
+        text-align: right;
+      }
+    }
+  }
+  // .resent-winners__cell-green
+  &__cell-green {
+    color: var(--green);
+  }
+  // .resent-winners__cell-red
+  &__cell-red {
+    color: var(--red);
+  }
+  // .resent-winners__button
+  &__button {
+  }
+}
+
+//========================================================================================================================================================
+
+.profit {
+  background: var(--gray-bg);
+  padding: toRem(72) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(40) 0;
+  }
+  // .profit__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $mobile) {
+      align-items: flex-start;
+    }
+  }
+  // .profit__title
+  &__title {
+    text-align: center;
+    width: 100%;
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
+  }
+  // .profit__subtitle
+  &__subtitle {
+    max-width: toRem(374);
+    text-align: center;
+    margin-top: toRem(24);
+    @media (max-width: $mobile) {
+      text-align: left;
+      max-width: toRem(214);
+    }
+  }
+  // .profit__cards
+  &__cards {
+    margin-top: toRem(72);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: toRem(40);
+    }
+    @media (max-width: $mobile) {
+      gap: 16px;
+      margin-top: toRem(24);
+    }
+    .tipster-about__card {
+      @media (max-width: $mobile) {
+        padding: toRem(16);
+      }
+      .tipster-about__icon {
+        margin-bottom: toRem(16);
+      }
+    }
+  }
+  &__graph {
+    margin-top: toRem(72);
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--white);
+    padding: toRem(24);
+    width: 100%;
+    @media (max-width: $tablet) {
+      margin-top: toRem(40);
+    }
+    @media (max-width: $mobile) {
+      margin-top: toRem(24);
+    }
+  }
+  &__graph-title {
+  }
+  &__graph-chart {
+    margin-top: toRem(24);
+    width: 100%;
+    max-height: 252px;
+  }
+  &__buttons {
+    display: flex;
+    align-self: center;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-top: toRem(72);
+    width: 100%;
+    @media (max-width: $tablet) {
+      margin-top: toRem(40);
+      gap: 16px;
+    }
+    @media (max-width: $mobile) {
+      margin-top: toRem(24);
+      gap: 8px;
+    }
+  }
+}
+//========================================================================================================================================================
+
+.pricing {
+  padding: toRem(72) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(40) 0;
+  }
+  // .pricing__container
+  &__container {
+  }
+  // .pricing__title
+  &__title {
+    text-align: center;
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
+  }
+  // .pricing__wrap
+  &__wrap {
+    margin-top: toRem(72);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 600px));
+    align-items: end;
+    gap: 32px;
+    width: 100%;
+    @media (max-width: $tablet) {
+      margin-top: toRem(40);
+      gap: 16px;
+      overflow-x: auto;
+    }
+    @media (max-width: $mobile) {
+      margin-top: toRem(24);
+      gap: 8px;
+    }
+  }
+  // .pricing__card
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $mobile) {
+      &:first-child {
+        order: 2;
+      }
+      &:last-child {
+        order: 1;
+      }
+    }
+  }
+  // .pricing__info
+  &__info {
+    border-radius: 16px;
+    border: 1px solid var(--gray-border);
+    width: 100%;
+    padding: toRem(32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @media (max-width: $tablet) {
+      padding: toRem(24);
+    }
+  }
+  // .pricing__card-title
+  &__card-title {
+  }
+  // .pricing__card-price
+  &__card-price {
+    padding: toRem(16) 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  // .pricing__card-number
+  &__card-number {
+  }
+  // .pricing__card-desc
+  &__card-desc {
+    font-size: toRem(24);
+    line-height: 140%;
+    color: #475467;
+    font-weight: 300;
+    max-width: toRem(347);
+    @media (max-width: $mobile) {
+      font-size: toRem(14);
+    }
+  }
+  // .pricing__card-button
+  &__card-button {
+    margin-top: toRem(40);
+    width: 100%;
+  }
+  // .pricing__tag
+  &__tag {
+    background: var(--blue);
+    border-radius: 12px 12px 0px 0px;
+    text-align: center;
+    color: var(--white);
+    padding: toRem(10);
+    width: 45%;
+    @media (max-width: $mobile) {
+      width: 70%;
+    }
+  }
+  // .pricing__card-bage
+  &__card-bage {
+    padding: toRem(12);
+    border-radius: 8px;
+  }
+}
+
+//========================================================================================================================================================
+
+.faq {
+  padding: toRem(72) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(40) 0;
+  }
+  // .faq__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  // .faq__title
+  &__title {
+    max-width: toRem(768);
+  }
+  // .faq__wrap
+  &__wrap {
+    max-width: toRem(768);
+    margin-top: toRem(72);
+    @media (max-width: $tablet) {
+      margin-top: toRem(40);
+    }
+    @media (max-width: $mobile) {
+      margin-top: toRem(24);
+    }
+  }
+  // .faq__item
+  &__item {
+  }
+  // .faq__name
+  &__name {
+  }
+  // .faq__body
+  &__body {
+  }
+}
+
+//========================================================================================================================================================
+
+.terms {
+  padding: toRem(72) 0;
+  @media (max-width: $mobile) {
+    padding: toRem(24) 0;
+  }
+  // .terms__container
+  &__container {
+  }
+  &__title {
+    max-width: toRem(806);
+  }
+  &__text {
+    margin-top: toRem(40);
+    max-width: toRem(806);
+    @media (max-width: $mobile) {
+      margin-top: toRem(24);
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(40);
+        @media (max-width: $mobile) {
+          margin-bottom: toRem(16);
+        }
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.h2-title {
+}
+
+.body-text {
+}
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background: var(--gray-border);
+  margin: toRem(40) 0;
+  @media (max-width: $mobile) {
+    margin: toRem(24) 0;
   }
 }

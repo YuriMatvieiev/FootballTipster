@@ -24,6 +24,29 @@
   }
 }
 
+.secondary-button {
+  padding: toRem(20) toRem(40);
+  border-radius: 100px;
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  text-transform: uppercase;
+  color: var(--black);
+  font-size: toRem(20);
+  font-weight: 500;
+  line-height: 140%;
+  transition: all 0.3s;
+  text-align: center;
+  @media (any-hover: hover) {
+    &:hover {
+      border: 1px solid var(--yellow);
+    }
+  }
+  @media (max-width: $mobile) {
+    padding: toRem(12) toRem(24);
+    font-size: toRem(16);
+  }
+}
+
 .h1-title {
   font-size: toRem(60);
   font-weight: 700;

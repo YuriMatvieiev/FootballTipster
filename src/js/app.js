@@ -12,7 +12,7 @@
 */
 
 // Увімкнути/вимкнути FLS (Full Logging System) (в роботі)
-window["FLS"] = true;
+window["FLS"] = false;
 
 // Підключення основного файлу стилів
 import "../scss/style.scss";
@@ -45,7 +45,7 @@ import * as flsFunctions from "./files/functions.js";
 Документація: https://template.fls.guru/template-docs/modul-spojlery.html
 Сніппет (HTML): spollers
 */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 
 /*
 Модуль "Таби"

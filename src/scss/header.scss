@@ -1,5 +1,7 @@
 .header {
   padding: toRem(24) 0;
+  background: var(--white);
+  color: var(--black);
   // .header__container
   &__container {
     display: flex;
@@ -8,7 +10,6 @@
   }
   // .header__logo
   &__logo {
-    color: var(--white);
     font-size: toRem(24);
     font-weight: 700;
     letter-spacing: 6.24px;
@@ -33,7 +34,6 @@
     gap: 24px;
     font-size: toRem(24);
     font-weight: 300;
-    color: var(--white);
     @media (max-width: $mobile) {
       font-size: toRem(14);
     }

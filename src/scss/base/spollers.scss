@@ -2,93 +2,88 @@
 // Сніппет (HTML): spoller
 
 // Блок зі спойлерами
-.spollers {
-	display: grid;
-	gap: 15px;
+.faq__wrap {
+  display: grid;
+  width: 100%;
 }
 // Спойлер
-.spollers__item {
-	font-size: toRem(20);
+.faq__item {
+  padding: toRem(24) 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--gray-border);
+  }
 }
 // Заголовок спойлера
-.spollers__title {
-	width: 100%;
-	cursor: default;
-	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
-	list-style: none;
-	&::marker,
-	&::-webkit-details-marker {
-		display: none;
-	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
-				width: toRem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
-	}
+.faq__name {
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  flex-grow: 1;
+  gap: 24px;
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &::marker,
+  &::-webkit-details-marker {
+    display: none;
+  }
+  &._spoller-active {
+    .faq__icon {
+      border: 2px solid var(--blue);
+      &::before,
+      &::after {
+        background-color: var(--blue);
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
 }
-// Контент спойлера
-.spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+.faq__icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--black);
+  background: transparent;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  ._spoller-init & {
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background-color: var(--black);
+      height: 2px;
+      width: 8px;
+      transition: transform 0.5s ease 0s;
+    }
+    &::before {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+}
+.faq__body {
+  color: #475467;
+  padding-right: toRem(48);
+  margin-top: toRem(8);
 }
