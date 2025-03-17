@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Sign up" })
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        @@include('html/_header.htm',{})
+
+        <section class="login">
+          <div class="login__container">
+            <div class="login__wrap">
+              <h3 class="h3-title login__title">Create an account</h3>
+              <div class="body-text login__subtitle">
+                Please enter your details.
+              </div>
+              <div class="login__socials">
+                <a href="#" class="login__socials-item">
+                  <img
+                    src="@img/svg/google.svg"
+                    class="login__socials-logo"
+                    alt="Image"
+                  />
+                  <div class="login__socials-text">Continue with Google</div>
+                </a>
+                <a href="#" class="login__socials-item">
+                  <img
+                    src="@img/svg/facebook.svg"
+                    class="login__socials-logo"
+                    alt="Image"
+                  />
+                  <div class="login__socials-text">Continue with Facebook</div>
+                </a>
+                <a href="#" class="login__socials-item">
+                  <img
+                    src="@img/svg/apple.svg"
+                    class="login__socials-logo"
+                    alt="Image"
+                  />
+                  <div class="login__socials-text">Continue with Apple</div>
+                </a>
+              </div>
+              <div class="horizontal-line">
+                <div class="horizontal-line-text">or</div>
+              </div>
+              <form action="#" class="login__form">
+                <div class="login__form-item">
+                  <label class="login__form-item-label" for="signup-name">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    name="signup-name"
+                    id="signup-name"
+                    class="login__form-item-input"
+                  />
+                </div>
+                <div class="login__form-item">
+                  <label class="login__form-item-label" for="signup-email">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    name="signup-email"
+                    id="signup-email"
+                    class="login__form-item-input"
+                  />
+                </div>
+                <div class="login__form-item">
+                  <label class="login__form-item-label" for="signup-password"
+                    >Password</label
+                  >
+                  <div class="login__form-item-password">
+                    <input
+                      type="password"
+                      placeholder="Create a password"
+                      name="signup-password"
+                      id="signup-password"
+                      class="login__form-item-input js-show-password js-check-password"
+                    />
+                    <button
+                      type="button"
+                      class="js-password-icon login__form-item-icon"
+                    ></button>
+                  </div>
+                  <ul class="login__form-password-checks">
+                    <li class="login__form-password-check" data-check="length">
+                      Must be at least 8 characters
+                    </li>
+                    <li class="login__form-password-check" data-check="special">
+                      Must contain one special character
+                    </li>
+                  </ul>
+                </div>
+
+                <button type="submit" class="main-button login__form-button">
+                  Get started
+                </button>
+                <div class="login__form-bottom">
+                  Already have an account?
+                  <a href="log-in.html" class="login__form-bottom-link"
+                    >Log in</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

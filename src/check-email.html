@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Check your email" })
+  <body>
+    <div class="wrapper">
+      <main class="page">
+        @@include('html/_header.htm',{})
+
+        <section class="login">
+          <div class="login__container">
+            <div class="login__wrap">
+              <h3 class="h3-title login__title">Check your email</h3>
+              <div class="body-text login__subtitle">
+                We sent a password reset link to
+                <a href="mailto:olivia@gmail.com">olivia@gmail.com</a>
+              </div>
+
+              <a href="#" class="main-button login__form-button">
+                Open email app
+              </a>
+              <div class="login__form-bottom">
+                Didn’t receive the email?
+                <a href="#" class="login__form-bottom-link">Click to resend</a>
+              </div>
+              <a href="log-in.html" class="login__form-arrow-back">
+                <img src="@img/svg/arrow-back.svg" alt="Image" />
+                Back to log in
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

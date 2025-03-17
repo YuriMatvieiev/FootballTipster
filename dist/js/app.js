@@ -9609,7 +9609,7 @@
         };
         return chartArea;
     }
-    class Chart {
+    class chart_Chart {
         static defaults=defaults;
         static instances=instances;
         static overrides=overrides;
@@ -10300,7 +10300,7 @@
         }
     }
     function invalidatePlugins() {
-        return each(Chart.instances, (chart => chart._plugins.invalidate()));
+        return each(chart_Chart.instances, (chart => chart._plugins.invalidate()));
     }
     function clipArc(ctx, element, endAngle) {
         const {startAngle, pixelMargin, x, y, outerRadius, innerRadius} = element;
@@ -14565,59 +14565,8 @@
         TimeSeriesScale
     });
     const registerables = [ controllers, chart_elements, plugins, scales ];
-    Chart.register(...registerables);
-    const auto_auto = Chart;
-    const canvas = document.getElementById("profitChart");
-    if (canvas) {
-        let profitData = JSON.parse(canvas.getAttribute("data-profit"));
-        let maxProfit = Math.max(...profitData) + 20;
-        const ctx = canvas.getContext("2d");
-        new auto_auto(ctx, {
-            type: "line",
-            data: {
-                labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
-                datasets: [ {
-                    label: "",
-                    data: profitData,
-                    borderColor: "#334BEB",
-                    fill: true,
-                    backgroundColor: "rgba(51, 75, 235, 0.1)",
-                    tension: .1,
-                    borderWidth: 2
-                } ]
-            },
-            options: {
-                elements: {
-                    point: {
-                        radius: 0
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    },
-                    y: {
-                        beginAtZero: false,
-                        min: 0,
-                        max: maxProfit,
-                        ticks: {
-                            stepSize: 20
-                        },
-                        grid: {
-                            color: "#e4e7ec"
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
-            }
-        });
-    }
+    chart_Chart.register(...registerables);
+    null && Chart;
     window["FLS"] = false;
     spollers();
 })();
